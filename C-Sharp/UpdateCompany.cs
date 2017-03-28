@@ -11,6 +11,10 @@ class Program
         string apiKey = "YOUR_API_KEY";
         string apiPath = "/api/v2/companies/1"; // API path
         string json = "{\"name\" : \"test-company\",\"domains\" : [\"test1.com\",\"test2.com\"]  }";
+
+        //Set TLS 1.2 (default is SSL3/TLS1.0)
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
         // Example :   HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://" + fdDomain + "/api/v2/companies/1"); 
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://" + fdDomain + ".freshdesk.com" + apiPath); 
         //HttpWebRequest class is used to Make a request to a Uniform Resource Identifier (URI).  
